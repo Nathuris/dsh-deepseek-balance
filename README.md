@@ -43,6 +43,8 @@ github:Nathuris/dsh-deepseek-balance#v0.1.0
 
 `#v0.1.0` 是发布标签，保证拿到固定版本；省略标签会跟随 `main` 的 HEAD。
 
+> 若本机没有可用的 `dsh` 命令，直接用插件页安装即可，效果相同。
+
 ### 从本地目录安装（开发调试）
 
 ```bash
