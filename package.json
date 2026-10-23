@@ -49,7 +49,7 @@
   "author": "Nathuris",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Nathuris/dsh-deepseek-balance.git"
+    "url": "git+https://github.com/Nathuris/dsh-deepseek-balance.git"
   },
   "homepage": "https://github.com/Nathuris/dsh-deepseek-balance#readme",
   "bugs": {
