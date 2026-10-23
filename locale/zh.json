@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DeepSeek 余额",
+    "description": "在输入框模型选择按钮左侧显示 DeepSeek 账户余额，悬停查看充值余额、赠送余额与更新时间。"
+  }
+}

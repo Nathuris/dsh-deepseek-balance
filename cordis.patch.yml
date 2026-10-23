@@ -1,0 +1,5 @@
+# dsh-deepseek-balance roster patch — merged by `dsh plugin add` (dsh.bundle.patch).
+# Mounts the host half so the browser half reaches window.__DSH_BOOT__ and runs.
+- insert:
+    - id: dsh-deepseek-balance
+      name: 'dsh-deepseek-balance'

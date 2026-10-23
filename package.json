@@ -1,0 +1,60 @@
+{
+  "name": "dsh-deepseek-balance",
+  "version": "0.1.0",
+  "description": "Show your DeepSeek account balance beside the composer model selector, with a hover card for the top-up and granted breakdown.",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "dsh-client-plugin",
+    "balance",
+    "deepseek-account"
+  ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/*.test.mjs",
+    "check": "node --check client.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "author": "Nathuris",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nathuris/dsh-deepseek-balance.git"
+  },
+  "homepage": "https://github.com/Nathuris/dsh-deepseek-balance#readme",
+  "bugs": {
+    "url": "https://github.com/Nathuris/dsh-deepseek-balance/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
