@@ -27,24 +27,29 @@
 
 前置条件：DeepSeek Harness 已登录 DeepSeek 账户，且默认模型使用 `deepseek-account` provider。
 
-### 方式一：插件页安装（推荐）
+### 从 GitHub 安装（推荐）
 
-1. 侧边栏打开 **Plugins**
-2. **Add plugin** → **Install a third-party plugin**
-3. 填入本仓库的**绝对路径**，例如：
-   ```
-   /Users/nathuris/Documents/GitHub Repo/dsh-deepseek-balance
-   ```
-4. 安装完成后点 **Enable now**
-5. 刷新页面；若页面仍是旧组合，重启 DSH NEXT
+```bash
+dsh plugin add github:Nathuris/dsh-deepseek-balance#v0.1.0
+```
 
-### 方式二：CLI
+或在 **Plugins → Add plugin → Install a third-party plugin** 里填入同一个地址：
+
+```
+github:Nathuris/dsh-deepseek-balance#v0.1.0
+```
+
+安装完成后点 **Enable now**；页面会通过 HMR 加载插件，若仍是旧组合则刷新页面或重启一次应用。
+
+`#v0.1.0` 是发布标签，保证拿到固定版本；省略标签会跟随 `main` 的 HEAD。
+
+### 从本地目录安装（开发调试）
 
 ```bash
 dsh plugin add /absolute/path/to/dsh-deepseek-balance
 ```
 
-安装后重启一次应用，插件即随页面加载。
+或在插件页填入本仓库的绝对路径。本地安装记录为 `link:`，改动 `client.js` 后无需重新发布。
 
 ## 开发
 
