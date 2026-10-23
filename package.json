@@ -1,7 +1,7 @@
 {
-  "name": "dsh-deepseek-balance",
-  "version": "0.1.0",
-  "description": "Show your DeepSeek account balance beside the composer model selector, with a hover card for the top-up and granted breakdown.",
+  "name": "dsh-deepseek-account-balance",
+  "version": "0.1.1",
+  "description": "Show the signed-in DeepSeek account balance beside the DSH composer model selector, with a hover card for the top-up and granted breakdown.",
   "type": "module",
   "main": "lib/index.js",
   "license": "MIT",
@@ -40,7 +40,8 @@
   "scripts": {
     "build": "node build.mjs",
     "test": "node --test test/*.test.mjs",
-    "check": "node --check client.js"
+    "check": "node --check client.js",
+    "prepublishOnly": "node build.mjs && node --test test/"
   },
   "engines": {
     "node": ">=22"

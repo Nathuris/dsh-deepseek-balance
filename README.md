@@ -1,4 +1,4 @@
-# dsh-deepseek-balance
+# dsh-deepseek-account-balance
 
 在 DeepSeek Harness 输入框的模型选择按钮左侧，显示当前 DeepSeek 账户的可用余额。悬停或点击后弹出明细卡片，展示充值余额、赠送余额与最近更新时间。
 
@@ -27,28 +27,34 @@
 
 前置条件：DeepSeek Harness 已登录 DeepSeek 账户，且默认模型使用 `deepseek-account` provider。
 
-### 从 GitHub 安装（推荐）
+### 从 npm 安装（推荐）
 
 ```bash
-dsh plugin add github:Nathuris/dsh-deepseek-balance#v0.1.0
+dsh plugin add dsh-deepseek-account-balance
 ```
 
-或在 **Plugins → Add plugin → Install a third-party plugin** 里填入同一个地址：
+或在 **Plugins → Add plugin → Install a third-party plugin** 里填入包名：
 
 ```
-github:Nathuris/dsh-deepseek-balance#v0.1.0
+dsh-deepseek-account-balance
 ```
 
 安装完成后点 **Enable now**；页面会通过 HMR 加载插件，若仍是旧组合则刷新页面或重启一次应用。
 
-`#v0.1.0` 是发布标签，保证拿到固定版本；省略标签会跟随 `main` 的 HEAD。
-
 > 若本机没有可用的 `dsh` 命令，直接用插件页安装即可，效果相同。
+
+### 从 GitHub 安装（备选）
+
+```bash
+dsh plugin add github:Nathuris/dsh-deepseek-balance#v0.1.1
+```
+
+`#v0.1.1` 是发布标签，保证拿到固定版本；省略标签会跟随 `main` 的 HEAD。npm 包名是 `dsh-deepseek-account-balance`，GitHub 仓库名仍是 `dsh-deepseek-balance`。
 
 ### 从本地目录安装（开发调试）
 
 ```bash
-dsh plugin add /absolute/path/to/dsh-deepseek-balance
+dsh plugin add /absolute/path/to/dsh-deepseek-account-balance
 ```
 
 或在插件页填入本仓库的绝对路径。本地安装记录为 `link:`，改动 `client.js` 后无需重新发布。
@@ -62,7 +68,7 @@ npm test        # node --test：金额格式化、汇总、store、bundle 装配
 
 改完 `src/` 后重新 `npm run build`。以 `link:` 方式安装时，插件管理器的下次重组会加载新的 `client.js`；否则在插件页关闭/开启一次，或刷新页面 / 重启应用。
 
-本地安装会在 profile 的 `package.json` 里留下 `"dsh-deepseek-balance": "link:<本目录>"`，因此**不要移动或删除本仓库目录**，否则插件会失效。
+本地安装会在 profile 的 `package.json` 里留下 `"dsh-deepseek-account-balance": "link:<本目录>"`，因此**不要移动或删除本仓库目录**，否则插件会失效。
 
 ### 结构
 

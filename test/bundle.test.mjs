@@ -4,6 +4,8 @@ import { readFileSync } from "node:fs";
 import vm from "node:vm";
 
 const clientSource = readFileSync(new URL("../client.js", import.meta.url), "utf8");
+const packageJson = JSON.parse(readFileSync(new URL("../package.json", import.meta.url), "utf8"));
+const patchSource = readFileSync(new URL("../cordis.patch.yml", import.meta.url), "utf8");
 
 /**
  * Load the generated bundle into a fake module system and run apply() against
@@ -147,13 +149,19 @@ function loadPlugin() {
   };
 
   plugin.apply(ctx);
-  return { plugin, registered, cleanups, styleTags };
+  return { plugin, registered, cleanups, styleTags, id: definition.id };
 }
 
 test("bundle exposes the plugin contract", () => {
   const { plugin } = loadPlugin();
   assert.equal(Array.from(plugin.inject).join(","), "slots,locale,remote,remote.account,modelDirectories");
   assert.equal(typeof plugin.apply, "function");
+});
+
+test("bundle id and roster patch both name the published package", () => {
+  const { id } = loadPlugin();
+  assert.equal(id, packageJson.name);
+  assert.match(patchSource, new RegExp(`name: '${packageJson.name.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\\\$&")}'`));
 });
 
 test("apply registers into the slot immediately before the model selector", () => {
